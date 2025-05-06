@@ -1,5 +1,7 @@
 ## BigInt
 
+
+<pre><code class="language-ngôn_ngữ">
 Number.MAX_SAFE_INTEGER === 9007199254740991  // ~ 9 triệu tỷ
 
 console.log(9007199254740991 + 1); // 9007199254740992 ✅
@@ -7,6 +9,8 @@ console.log(9007199254740991 + 1); // 9007199254740992 ✅
 console.log(9007199254740991 + 2); // 9007199254740992 ❌ (sai!)
 
 console.log(9007199254740991n + 2n); // 9007199254740993n ✅
+</code></pre>
+
 
 
 
@@ -29,20 +33,27 @@ console.log(9007199254740991n + 2n); // 9007199254740993n ✅
 
 
 
+
+
+
 ## Destructuring
 
 => Destructuring là cú pháp giúp tách giá trị từ mảng hoặc object ra thành các biến riêng biệt.
 
 -> đối với Arr
+<pre><code class="language-ngôn_ngữ">
 const arr = [1, 2, 3];
 const [a, b, c] = arr;
 
 console.log(a); // 1
 console.log(b); // 2
 console.log(c); // 3
+</code></pre>
+
 
 
 -> Đối với Object
+<pre><code class="language-ngôn_ngữ">
 const user = {
   name: "Alice",
   age: 25,
@@ -52,6 +63,8 @@ const { name, age } = user;
 
 console.log(name); // Alice
 console.log(age);  // 25
+</code></pre>
+
 
 
 | Tình huống                                                        | Tham chiếu chung? |
