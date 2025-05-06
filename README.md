@@ -1,6 +1,6 @@
 ## BigInt
 
-
+=> BigInt là một kiểu dữ liệu trong JavaScript được dùng để biểu diễn các số nguyên rất lớn, vượt quá giới hạn của kiểu Number thông thường.
 <pre><code class="language-ngôn_ngữ">
 Number.MAX_SAFE_INTEGER === 9007199254740991  // ~ 9 triệu tỷ
 

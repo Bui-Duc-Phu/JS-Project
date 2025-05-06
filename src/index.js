@@ -1,47 +1,48 @@
-
-
-// 1. Write the function to calculate the combination (Ckn)
-function factorial(n) {
-    if (n === 0 || n === 1) return 1;
-    return n * factorial(n - 1);
-  }
-function combination(n, k) {
-    if (k < 0 || k > n) return 0;
-    return factorial(n) / (factorial(k) * factorial(n - k));
-  }
-console.log("\ncombination = "+combination(2, 5)); 
+// index.js
+const readline = require('readline-sync');
+const {
+    combination,
+    getRandomInteger,
+    getRandomElement,
+    findMissingElements
+} = require('./exercise2');
 
 
 
-// 2. Write the function to get a random integer between 2 numbers: min, max;
-function getRandomInteger(min, max) {
-    let totalNumbers = max - min + 1;
-    let randomIndex = Math.floor(Math.random() * totalNumbers);
-    let result = min + randomIndex;
-    return result;
+
+function runAllTestsExercise2() {
+    console.log("\nTest combination(n, k):");
+    console.log("C(5, 2) =", combination(5, 2));
+
+    console.log("\nTest getRandomInteger(min, max):");
+    console.log("Random int from 1 to 10:", getRandomInteger(1, 10));
+
+    console.log("\nTest getRandomElement(arr):");
+    const fruits = ["apple", "banana", "cherry", "mango"];
+    console.log("Random fruit:", getRandomElement(fruits));
+
+    console.log("\nTest findMissingElements(arr1, arr2):");
+    const arr1 = [1, 2, 3, 4];
+    const arr2 = [2, 3, 5, 6];
+    console.log("Missing in arr1:", findMissingElements(arr1, arr2));
 }
-console.log('\ngetRandomInteger = '+getRandomInteger(1, 9)); 
 
 
-// 3. Write the function get a random element from an arrays.
-function getRandomElement(arr) {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    return arr[randomIndex];
+while (true) {
+    console.log("\n==== MENU ====");
+    console.log("1. Run test exercise2");
+    console.log("0. Exit");
+    const choice = readline.question("Your choice: ");
+
+    switch (choice) {
+        case "0":
+            console.log("Bye!");
+            process.exit();
+        case "1":
+            runAllTestsExercise2();
+            break;
+        default:
+            console.log("Invalid choice");
+    }
 }
-const fruits = ["apple", "banana", "cherry", "mango"];
-const randomFruit = getRandomElement(fruits);
-console.log('\ngetRandom element from an arrays = '+randomFruit);  
 
-
-// 4. Given two arrays of integers, find which elements in the second array are missing from the first array.
-function findMissingElements(arr1, arr2) {
-    return arr2.filter(element => !arr1.includes(element)); // có thể sử dụng set cho arr1 => set1.has nhanh hơn include 
-}
-const arr1 = [1, 2, 3, 4];
-const arr2 = [2, 3, 5, 6];
-console.log(findMissingElements(arr1, arr2)); 
-
-
-
-
-  
