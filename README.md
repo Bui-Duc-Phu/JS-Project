@@ -119,4 +119,5 @@ IEEE 754 định nghĩa cách biểu diễn các số thực dấu chấm độn
 🔍 Lý do: 0.1 và 0.2 không thể biểu diễn chính xác trong hệ nhị phân theo chuẩn IEEE 754.
 
 ⭐ Kết luận
+<br>
 IEEE 754 là một tiêu chuẩn quan trọng, cung cấp một cách thống nhất để biểu diễn và xử lý các số thực dấu chấm động trong máy tính. Với cấu trúc rõ ràng, hỗ trợ các giá trị đặc biệt, và tính nhất quán trên các nền tảng, nó đã trở thành nền tảng cho hầu hết các ứng dụng tính toán hiện đại. Hiểu rõ IEEE 754 không chỉ giúp các lập trình viên và kỹ sư tối ưu hóa mã mà còn đảm bảo độ chính xác trong các ứng dụng quan trọng.
