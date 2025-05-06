@@ -28,3 +28,58 @@ console.log(9007199254740991n + 2n); // 9007199254740993n ✅
 | Làm việc với `Number` bình thường                | ❌ Không nên trộn với `BigInt` |
 
 
+
+## Destructuring
+
+=> Destructuring là cú pháp giúp tách giá trị từ mảng hoặc object ra thành các biến riêng biệt.
+
+-> đối với Arr
+const arr = [1, 2, 3];
+const [a, b, c] = arr;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+
+
+-> Đối với Object
+const user = {
+  name: "Alice",
+  age: 25,
+};
+
+const { name, age } = user;
+
+console.log(name); // Alice
+console.log(age);  // 25
+
+
+| Tình huống                                                        | Tham chiếu chung? |
+| ----------------------------------------------------------------- | ----------------- |
+| Destructure **giá trị primitive** (`number`, `string`, `boolean`) | ❌ Không           |
+| Destructure **object hoặc array**                                 | ✅ Có (tham chiếu) |
+
+
+<pre><code class="language-ngôn_ngữ">
+const person = {
+  name: "Alice",          // string (primitive)
+  age: 30,                // number (primitive)
+  address: {
+    city: "Hanoi"         // object (non-primitive)
+  }
+};
+
+// Destructuring với let để có thể gán lại name, age
+let { name, age, address } = person;
+
+// Thay đổi các biến đã destructure
+name = "Boss"; 
+age = 50;
+address.city = "Saigon";  // Thay đổi object (tham chiếu chung)
+
+// Kiểm tra object gốc sau khi thay đổi
+console.log("person.name:", person.name);           // 👉 "Alice" ❌ Không đổi
+console.log("person.age:", person.age);             // 👉 30     ❌ Không đổi
+console.log("person.address.city:", person.address.city); // 👉 "Saigon" ✅ Bị đổi
+</code></pre>
+
