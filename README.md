@@ -96,3 +96,27 @@ console.log("person.age:", person.age);             // 👉 30     ❌ Không đ
 console.log("person.address.city:", person.address.city); // 👉 "Saigon" ✅ Bị đổi
 </code></pre>
 
+<br>
+<br>
+
+## IEEE 754
+
+-> Tổng quan về IEEE 754
+IEEE 754 định nghĩa cách biểu diễn các số thực dấu chấm động, bao gồm:
+
+- Số thực thông thường: Các số có phần thập phân, ví dụ: 3.14, -0.001, 2.71828.
+- Các giá trị đặc biệt: Bao gồm vô cực (±∞), giá trị không xác định (NaN - Not a Number), số 0 có dấu (+0 và -0), và các số dưới mức chuẩn (subnormal numbers).
+- Các phép toán dấu chấm động: Cộng, trừ, nhân, chia, lấy căn bậc hai, so sánh, chuyển đổi giữa các định dạng, v.v.
+- Xử lý ngoại lệ: Các trường hợp như chia cho 0, tràn số (overflow), hoặc dưới tràn (underflow).
+
+ => Mục tiêu của IEEE 754 là đảm bảo rằng các phép toán dấu chấm động được thực hiện chính xác, nhất quán và có thể dự đoán được trên các hệ thống máy tính khác nhau, bất kể nhà sản xuất phần cứng.
+
+🚫 Lỗi do IEEE 754 thường gặp trên nền tảng JS:
+<pre><code class="language-ngôn_ngữ">
+0.1 + 0.2 === 0.3 // false ❌
+0.1 + 0.2         // 👉 0.30000000000000004
+</code></pre>
+🔍 Lý do: 0.1 và 0.2 không thể biểu diễn chính xác trong hệ nhị phân theo chuẩn IEEE 754.
+
+⭐ Kết luận
+IEEE 754 là một tiêu chuẩn quan trọng, cung cấp một cách thống nhất để biểu diễn và xử lý các số thực dấu chấm động trong máy tính. Với cấu trúc rõ ràng, hỗ trợ các giá trị đặc biệt, và tính nhất quán trên các nền tảng, nó đã trở thành nền tảng cho hầu hết các ứng dụng tính toán hiện đại. Hiểu rõ IEEE 754 không chỉ giúp các lập trình viên và kỹ sư tối ưu hóa mã mà còn đảm bảo độ chính xác trong các ứng dụng quan trọng.
